@@ -1,0 +1,430 @@
+<html>
+
+<head>
+  <title>Deposit Calculator</title>
+  <link href="Deposit.css" rel="stylesheet">
+  <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <header>
+    <h1>Interest Calculator</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <!-- <li><a href="#container">Products</a></li> -->
+            <li><a href="#footer">Contact Us</a></li>
+            <!-- <li><a href="WT_P10_Login.htm">Logout</a></li> -->
+        </ul>
+    </nav>
+  </header>
+  <center>
+    <h2>Deposit Calculator</h2>
+  </center>
+  <div class="d">
+    <form action="#" method="post" name="f1">
+      <table>
+        <tr>
+          <td>Type of deposit</td>
+          <td>
+            <input type="radio" name="depositType" value="fd" onblur="checkType()" />Fixed deposit<br /><input
+              type="radio" name="depositType" value="rd" onblur="checkType()" />Recurring deposit <br><span
+              id="depositTypeErr"></span>
+              <p></p>
+          </td>
+        </tr>
+        <tr>
+          <td>Principal Amount:</td>
+          <td>
+            <div class="icon-textbox">
+              <i class="fa fa-inr" aria-hidden="true"></i>
+              <input type="number" name="amt" min="0" onblur="checkAmt()" /><br><span id="amtErr" ></span>
+            </div>
+            <p></p>
+           </td>
+        </tr>
+        <tr>
+          <td>Maturiy Period:</td>
+          <td>
+            <input type="number" id="numYears" name="MPeriod" min="0" placeholder="Years" onblur="checkPeriod()" />
+            <input type="number" id="numMonths" name="MPeriod" min="0" placeholder="Months"  onblur="checkPeriod()"/>
+            <input type="number" id="numDays" name="MPeriod" min="0" placeholder="Days" onblur="checkPeriod()" /><br><span id="yearsErr"></span>
+            <p></p>
+          </td>
+        </tr>
+         <tr>
+          <td>Interest Rate:</td>
+          <td>
+            <div class="icon-percent">
+              <i class="fa fa-percent" aria-hidden="true"></i>
+              <input type="number" name="rate" min="0" max="100" onblur="checkRate()" /><br><span id="rateErr"></span>
+            </div>
+            <p></p>
+          </td>
+        </tr>
+        <tr>
+          <td>Compounding period:</td>
+          <td>
+            <select name="period" onblur="checkFreq();">
+              <option value="">Select</option>
+              <option value="1">Monthly</option>
+              <option value="3">Quarterly</option>
+              <option value="6">Half yearly</option>
+              <option value="12">Yearly</option>
+            </select><br><span id="freqErr"></span>
+            <p></p>
+          </td>
+        </tr>
+        <tr>
+          <td>Enter a date:</td>
+          <td>
+            <input type="date" id="inputDate" name="inputDate" onblur="checkdate()"/><span id="dateErr"></span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" style="text-align: center;">
+            <input id="calbtn" type="button" value="Calulate" onClick="cal()" />         
+            <input id="clearbtn" type="reset" value="Clear" />
+          </td>
+        </tr>
+        <tr>
+          <td>Maturity date:</td>
+          <td>
+            <input type="text" id="outputDate" name="outputDate" readonly />
+            <p></p>
+          </td>
+        </tr>
+        <tr>
+          <td>Maturity Amount.</td>
+          <td>
+            <div class="icon-textbox">
+              <i class="fa fa-inr" aria-hidden="true"></i>
+            <input type="number" id="maturity" name="maturity" readonly />
+          </div>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" style="text-align: center;">
+          <input id="calbtn" type="button" value="View Details" onclick="document.getElementById('resultDiv').style.display='block'">
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
+  <div class="d" id="resultDiv">
+    <table id="resultTable">
+      <thead>
+        <tr>
+          <th>Index</th>
+          <th>Date</th>
+          <th>Interest</th>
+          <th>Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+    <p></p>
+    <p></p>
+    <center><a href="">
+      <span onclick="document.getElementById('resultDiv').style.display='none';" style="font-style:oblique;color:black;font-size:large;">Close</span>
+      </a> </center>
+  </div>
+  <footer>
+    <div class="contact" id="footer">
+        <h4>Developed by,</h4>
+        <p>Pranav Tank</p>
+        <p> Computer Science & Engineering Department,Nirma University</p>
+        <p>Email: <a href="mailto:ptank121@gmail.com">ptank121@gmail.com</a></p>
+        <p>2023 &copy Pranav Tank, All rights reserved.</p>
+        <ul>
+            <li><a href="#"><i class="ion-social-instagram"></i></a></li>
+            <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+            <!-- <li><a href="#"><i class="ion-social-twitter"></i></a></li> -->
+            <!-- <li><a href="#"><i class="ion-social-rss"></i></a></li> -->
+            <!-- <li><a href="#"><i class="ion-social-googleplus"></i></a></li> -->
+            <li><a href="#"><i class="ion-social-youtube"></i></a></li>
+            <li><a href="#"><i class="ion-social-linkedin"></i></li>
+        </ul>
+    </div>
+  </footer>
+
+  <script>
+    // const fruits = ["Banana", "Orange", "Apple"];
+    // document.getElementById("demo").innerHTML = fruits;
+
+    // function myFunction() {
+    //   fruits.push("Lemon");
+    //   document.getElementById("demo").innerHTML = fruits;
+    // }
+    var intrst=[];
+    var Amount=[];
+    var dates=[];
+    document.getElementById("demo").innerHTML=intrst;
+    function cal() {
+      if (!checkAll()) return;
+      //alert(document.getElementById("inputDate").value);
+      var inputDate = new Date(document.getElementById("inputDate").value);
+      var numYears = parseInt(document.getElementById("numYears").value);
+      var numMonths = parseInt(document.getElementById("numMonths").value);
+      var numDays = parseInt(document.getElementById("numDays").value);
+      
+      var year = inputDate.getFullYear();
+      var month = inputDate.getMonth() + 1;
+      if (month < 10) {
+        month = "0" + month;
+      }
+      var day = inputDate.getDate();
+      if (day < 10) {
+        day = "0" + day;
+      }
+      var PDate = day + "-" + month + "-" + year;
+      dates.push(PDate);
+
+      var resultingDate = new Date(inputDate);
+      resultingDate.setFullYear(resultingDate.getFullYear() + numYears);
+      resultingDate.setMonth(resultingDate.getMonth() + numMonths);
+      resultingDate.setDate(resultingDate.getDate() + numDays);
+
+      if (resultingDate.getMonth() == 1 && resultingDate.getDate() > 28) {
+        var year = resultingDate.getFullYear();
+        if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+          resultingDate.setDate(29); //set last day of February in a leap year
+        } else {
+          resultingDate.setDate(28); //set last day of February in a non-leap year
+        }
+      }
+
+       year = resultingDate.getFullYear();
+       month = resultingDate.getMonth() + 1;
+      if (month < 10) {
+        month = "0" + month;
+      }
+       day = resultingDate.getDate();
+      if (day < 10) {
+        day = "0" + day;
+      }
+      var outputDate = day + "-" + month + "-" + year;
+
+      document.getElementById("outputDate").value = outputDate;
+     
+      // FD Interest:
+      var depositType = document.f1.depositType.value;
+
+      if (depositType == "fd" && document.f1.period.value.length != 0) {
+        var amt = parseFloat(document.f1.amt.value);
+        var rate = parseFloat(document.f1.rate.value);
+        var period = parseInt(document.f1.period.value);
+        intrst.push(0);
+        Amount.push(amt);
+
+        // var timeDifference = resultingDate.getTime() - inputDate.getTime();
+        // var monthDifference = timeDifference*12 / (1000 * 3600 * 24 * 365);
+        //alert(monthDifference);
+        var maturity = 0;
+        var newdate = new Date(inputDate);
+        newdate.setMonth(newdate.getMonth() + period);
+
+        // for(var i=3;i<=monthDifference;i+=3){
+        while(newdate<resultingDate){
+          
+          var timeDifference = newdate.getTime() - inputDate.getTime();
+          var dayDifference = timeDifference / (1000 * 3600 * 24);
+          
+          inputDate=new Date(newdate);
+           year = inputDate.getFullYear();
+           month = inputDate.getMonth() + 1;
+          if (month < 10) {
+            month = "0" + month;
+          }
+           day = inputDate.getDate();
+          if (day < 10) {
+            day = "0" + day;
+          }
+           PDate = day + "-" + month + "-" + year;
+          dates.push(PDate);
+          
+          //inputDate.setDate(inputDate.getDate() + 1);
+          newdate.setMonth(newdate.getMonth() + period);
+
+          var year = newdate.getFullYear();
+          // alert(newdate);
+          // alert(inputDate);
+          // alert(dayDifference);
+          if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+            maturity =amt * (rate/100) * (dayDifference / 366);
+          } 
+          else {
+            maturity =amt * (rate/100) * (dayDifference / 365);
+          }
+          maturity = Number(maturity.toFixed(2));
+          
+          //alert(maturity);
+           amt += maturity;
+           amt = Number(amt.toFixed(2));
+          intrst.push(maturity);
+          Amount.push(amt);
+        }
+        newdate.setMonth(newdate.getMonth() - period);
+        timeDifference = resultingDate.getTime() - newdate.getTime();
+        var dayDifference = timeDifference / (1000 * 3600 * 24);
+        
+        if(dayDifference > 0){
+          var year = newdate.getFullYear();
+          //alert(dayDifference);
+          if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+            maturity =amt * (rate/100) * (dayDifference / 366);
+          } 
+          else {
+            maturity =amt * (rate/100) * (dayDifference / 365);
+          }
+          
+          maturity = Number(maturity.toFixed(2));
+          amt += maturity;
+          amt = Number(amt.toFixed(2));
+          intrst.push(maturity);
+          Amount.push(amt);
+        }
+        // maturity +=amt * Math.pow(1 + rate / 100 / freq, (freq * dayDifference) / 365);
+        dates.push(outputDate);
+        document.getElementById("maturity").value = amt;
+
+      } else if (depositType == "rd" && document.f1.period.value.length != 0) {
+        var amt = parseFloat(document.f1.amt.value);
+        var rate = parseFloat(document.f1.rate.value);
+        //var year=parseInt(document.f1.years.value);
+        var period = parseInt(document.f1.period.value);
+
+        var timeDifference = resultingDate.getTime() - inputDate.getTime();
+        var dayDifference = timeDifference / (1000 * 3600 * 24);
+
+        var months = (dayDifference * 12) / 365;
+        var maturity = 0;
+        for (var i = 1; i <= months; i++) {
+          maturity +=amt * Math.pow(1 + rate / 100 / period, period * ((months - i + 1) / 12));
+        }
+        maturity = Number(maturity.toFixed(2));
+        document.getElementById("maturity").value = maturity;
+      } 
+  
+      var resultTable = document.getElementById("resultTable");
+      resultTable.querySelector("tbody").innerHTML = "";
+
+      // Generate table rows for each date, interest, and amount
+      for (var i = 0; i < dates.length; i++) {
+        var date = dates[i];
+        var interest = intrst[i];
+        var amount = Amount[i];
+
+        var row = document.createElement("tr");
+        row.innerHTML = `
+          <td>${i}</td>
+          <td>${date}</td>
+          <td>${interest}</td>
+          <td>${amount}</td>
+        `;
+        resultTable.querySelector("tbody").appendChild(row);
+      }
+    }
+    function checkAll() {
+      
+      if (checkType() && checkAmt() && checkRate() && checkFreq())
+        return true;
+      else return false;
+    }
+
+    function checkType() {
+      
+      if (document.f1.depositType.value.length == 0) {
+        document.getElementById("depositTypeErr").innerText =
+          "*Select a deposit type";
+          document.f1.depositType.className="error";
+        return false;
+      } else {
+        document.f1.depositType.className="noerror";
+        document.getElementById("depositTypeErr").innerText = "";
+        return true;
+      }
+    }
+
+    function checkAmt() {
+      if (isNaN(document.f1.amt.value) || document.f1.amt.value.length == 0) {
+        document.f1.amt.className="error";
+        document.getElementById("amtErr").innerText =
+          " * Amount required and should be a number";
+        return false;
+      } else {
+        document.f1.amt.className="noerror";
+        document.getElementById("amtErr").innerText = "";
+        return true;
+      }
+    }
+
+    function checkPeriod(){
+    		if( document.f1.numYears.value.length==0 &&  document.f1.numMonths.value.length==0 &&  document.f1.numDays.value.length==0 ){
+    			document.getElementById("yearsErr").innerText=" * Enter period";
+    			document.f1.numYears.className="error";
+          document.f1.numMonths.className="error";
+          document.f1.numDays.className="error";
+          return false;
+    		}else{
+          if( document.f1.numYears.value.length==0)
+            document.f1.numYears.value=0;
+          if( document.f1.numMonths.value.length==0)
+            document.f1.numMonths.value=0;
+          if( document.f1.numDays.value.length==0)
+            document.f1.numDays.value=0;
+          document.f1.numYears.className="noerror";
+          document.f1.numMonths.className="noerror";
+          document.f1.numDays.className="noerror";
+    			document.getElementById("yearsErr").innerText="";
+    			return true;
+    		}
+    }
+
+    function checkRate() {
+      if (
+        isNaN(document.f1.rate.value) ||
+        document.f1.rate.value.length == 0
+      ) {
+        document.f1.rate.className="error";
+        document.getElementById("rateErr").innerText =
+          " * Interest required and should be a number";
+        return false;
+      } else {
+        document.f1.rate.className="noerror";
+        document.getElementById("rateErr").innerText = "";
+        return true;
+      }
+    }
+
+    function checkFreq() {
+      if (document.f1.period.value.length == 0) {
+        document.f1.period.className="error";
+        document.getElementById("freqErr").innerText =
+          " * Select a compounding freq.";
+        return false;
+      } else {
+        document.f1.period.className="noerror";
+        document.getElementById("freqErr").innerText = "";
+        return true;
+      }
+    }
+    function checkdate() {
+      
+      if (document.getElementById("inputDate").value == null) {
+        document.getElementById("dateErr").innerText =
+          "*Enter the date";
+          document.f1.depositType.className="error";
+        return false;
+      } else {
+        document.f1.depositType.className="noerror";
+        document.getElementById("dateErr").innerText = "";
+        return true;
+      }
+    }
+  </script>
+</body>
+
+</html>

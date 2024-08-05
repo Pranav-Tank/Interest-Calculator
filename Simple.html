@@ -1,0 +1,183 @@
+<html>
+
+<head>
+  <title>Simple Calculator</title>
+  <link href="Deposit.css" rel="stylesheet">
+  <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <header>
+    <h1>Interest Calculator</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <!-- <li><a href="#container">Products</a></li> -->
+            <li><a href="#footer">Contact Us</a></li>
+            <!-- <li><a href="WT_P10_Login.htm">Logout</a></li> -->
+        </ul>
+    </nav>
+  </header>
+  <center>
+    <h2>Simple Calculator</h2>
+  </center>
+  <div class="d">
+    <form action="#" method="post" name="f1">
+      <table>
+        <tr>
+          <td>Principal Amount:</td>
+          <td>
+            <div class="icon-textbox">
+              <i class="fa fa-inr" aria-hidden="true"></i>
+              <input type="number" name="amt" min="0" onblur="checkAmt()" /><br><span id="amtErr" ></span>
+            </div>
+            <p></p>
+          </td>
+        </tr>
+        <tr>
+          <td>Time Period:</td>
+          <td>
+            <input type="number" id="numYears" name="MPeriod" min="0" placeholder="Years" onblur="checkPeriod()" />
+            <input type="number" id="numMonths" name="MPeriod" min="0" placeholder="Months"  onblur="checkPeriod()"/>
+            <input type="number" id="numDays" name="MPeriod" min="0" placeholder="Days" onblur="checkPeriod()" /><br><span id="yearsErr"></span>
+            <p></p>
+          </td>
+        </tr>
+        <tr>
+          <td>Interest Rate:</td>
+          <td>
+            <div class="icon-percent">
+              <i class="fa fa-percent" aria-hidden="true"></i>
+              <input type="number" name="rate" min="0" max="100" onblur="checkRate()" /><br><span id="rateErr"></span>
+            </div>
+          </td>
+        </tr> 
+        <tr>
+          <td colspan="2" style="text-align: center;">
+            <input id="calbtn" type="button" value="Calulate" onClick="cal()" />         
+            <input id="clearbtn" type="reset" value="Clear" />
+          </td>
+        </tr>
+        <tr>
+            <td>Interest</td>
+            <td>
+              <div class="icon-textbox">
+                <i class="fa fa-inr" aria-hidden="true"></i>
+                <input type="number" id="interest" name="maturity" readonly />
+              </div>
+              <p></p>
+            </td>
+          </tr>
+        <tr>
+          <td>Maturity Amount.</td>
+          <td>
+            <div class="icon-textbox">
+              <i class="fa fa-inr" aria-hidden="true"></i>
+            <input type="number" id="maturity" name="maturity" readonly />
+          </div>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
+  <div><br></div>
+  <footer>
+    <div class="contact" id="footer">
+        <h4>Developed by,</h4>
+        <p>Pranav Tank</p>
+        <p> Computer Science & Engineering Department,Nirma University</p>
+        <p>Email: <a href="mailto:ptank121@gmail.com">ptank121@gmail.com</a></p>
+        <p>2023 &copy Pranav Tank, All rights reserved.</p>
+        <ul>
+            <li><a href="#"><i class="ion-social-instagram"></i></a></li>
+            <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+            <!-- <li><a href="#"><i class="ion-social-twitter"></i></a></li> -->
+            <!-- <li><a href="#"><i class="ion-social-rss"></i></a></li> -->
+            <!-- <li><a href="#"><i class="ion-social-googleplus"></i></a></li> -->
+            <li><a href="#"><i class="ion-social-youtube"></i></a></li>
+            <li><a href="#"><i class="ion-social-linkedin"></i></li>
+        </ul>
+    </div>
+  </footer>
+
+  <script>
+    function cal() {
+      if (!checkAll()) return;
+           
+        var amt = parseFloat(document.f1.amt.value);
+        var rate = parseFloat(document.f1.rate.value);
+        var years = parseInt(document.getElementById("numYears").value);
+        var months = parseInt(document.getElementById("numMonths").value);
+        var days = parseInt(document.getElementById("numDays").value);
+        
+        var totalDays = (years * 365) + (months * 30) + days;
+
+        var maturity = amt * (rate/100) * (totalDays / 365);
+        maturity = Number(maturity.toFixed(2));
+        document.getElementById("interest").value = maturity;
+        document.getElementById("maturity").value = maturity +amt;
+      
+    }
+
+    function checkAll() {
+      
+      if (checkPeriod() && checkAmt() && checkRate())
+        return true;
+      else return false;
+    }
+
+    function checkAmt() {
+      if (isNaN(document.f1.amt.value) || document.f1.amt.value.length == 0) {
+        document.f1.amt.className="error";
+        document.getElementById("amtErr").innerText =
+          " * Amount required and should be a number";
+        return false;
+      } else {
+        document.f1.amt.className="noerror";
+        document.getElementById("amtErr").innerText = "";
+        return true;
+      }
+    }
+
+    function checkPeriod(){
+    		if( document.f1.numYears.value.length==0 &&  document.f1.numMonths.value.length==0 &&  document.f1.numDays.value.length==0 ){
+    			document.getElementById("yearsErr").innerText=" * Enter period";
+    			document.f1.numYears.className="error";
+          document.f1.numMonths.className="error";
+          document.f1.numDays.className="error";
+          return false;
+    		}else{
+          if( document.f1.numYears.value.length==0)
+            document.f1.numYears.value=0;
+          if( document.f1.numMonths.value.length==0)
+            document.f1.numMonths.value=0;
+          if( document.f1.numDays.value.length==0)
+            document.f1.numDays.value=0;
+          document.f1.numYears.className="noerror";
+          document.f1.numMonths.className="noerror";
+          document.f1.numDays.className="noerror";
+    			document.getElementById("yearsErr").innerText="";
+    			return true;
+    		}
+    }
+
+    function checkRate() {
+      if (
+        isNaN(document.f1.rate.value) ||
+        document.f1.rate.value.length == 0
+      ) {
+        document.f1.rate.className="error";
+        document.getElementById("rateErr").innerText =
+          " * Interest required and should be a number";
+        return false;
+      } else {
+        document.f1.rate.className="noerror";
+        document.getElementById("rateErr").innerText = "";
+        return true;
+      }
+    }
+  </script>
+</body>
+
+</html>

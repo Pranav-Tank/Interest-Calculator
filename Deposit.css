@@ -1,0 +1,507 @@
+.d {
+    width: max-content;
+    overflow: hidden;
+    margin: auto;
+    /* margin: 20 0 0 450px; */
+    padding: 50px;
+    background: rgb(174, 175, 230);
+    font-size: 5;
+    border-style: groove;
+    border-radius: 15px;
+    box-shadow: 0px 5px 10px rgb(74, 88, 114);
+    display:flex;
+    justify-content:center;
+    align-items: center;
+  }
+  #calbtn{
+    margin: 15px;
+    font-size: 18px;
+    background: rgb(100, 95, 245);
+    color: white;
+    border-radius: 15px;
+    padding: 8px 20px;
+  }
+  #clearbtn{
+    margin: 15px;
+    font-size: 18px;
+    background: rgb(100, 95, 245);
+    color: white;
+    border-radius: 15px;
+    padding: 8px 20px;
+  }
+  /* .error{
+    background-color: rgb(245, 101, 101);
+    }
+    .noerror{
+        background-color: rgb(246, 246, 246);
+    } */
+    span{
+        color: red;
+    }
+  body {
+    height: auto;
+    width: auto;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #8E2DE2;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #4A00E0, #8E2DE2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    /* background-image: linear-gradient(135deg, rgba(0, 76, 255, 0.7), rgb(231, 235, 240), rgba(0, 76, 255, 0.7));
+    background-repeat: no-repeat; */
+    background-size: cover;
+    /* z-index: -1; */
+}
+
+ /* input[name="amt"] {
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('https://im.indiatimes.in/content/2020/Jul/indian-currency-389006_1920_5f1547587ee6e.jpg?w=640&h=480&cc=1');
+    background-size: 50px;
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+     padding: 12px 20px 12px 40px; 
+  } */
+header {
+    position: sticky;
+    top: 0;
+    height : max-content;
+    width: auto;
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+h1 {
+    margin: 0;
+}
+
+h2{
+    height: max-content;
+    width: max-content;
+    border: 1px solid black;
+    border-radius: 20px;
+    margin-left: 2.5%;
+    padding: 10px;
+    background-color: rgb(186, 203, 227);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 1px 1px 5px black;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    margin-right: 20px;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ccc;
+}
+
+.cart {
+    margin-left: auto;
+}
+
+footer {
+    margin-bottom: 0px;
+    background-color:rgb(34, 37, 68);
+    color: #fff;
+    padding: 20px;
+    /* text-align: center; */
+}
+
+footer ul{
+    margin: auto;
+    padding: 2px;
+    font-size: larger;
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    /* justify-content: left; */
+    margin-bottom: 0px;
+}
+
+h4 {
+    margin: 0;
+}
+
+p {
+    margin: 5px 0;
+}
+
+#quote{
+    height: max-content;
+    width: 100%;
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 25px;
+    font-weight: bold;
+    font-family: 'Times New Roman';
+}
+
+footer p:last-child {
+    margin-bottom: 0;
+}
+
+header {
+    min-height: 7vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(34, 37, 68);
+    color: rgb(0, 208, 255);
+    padding: 20px;
+    /* font-family: ; */
+    z-index: 11;
+}
+
+h1 {
+    margin: 0;
+}
+td{
+    font-size: 18;
+}
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    margin: 0 10px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+.container {
+    height: max-content;
+    /* max-width: 1200px; */
+    width: 95%;
+    margin: 0 auto;
+    /* padding: 20px; */
+    padding: 2.5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.card {
+    width: 300px;
+    margin-bottom: 20px;
+    /* height: 350px; */
+    height: max-content;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .5);
+    border-radius: 20px;
+    padding: 5px;
+    overflow: hidden;
+    background-color: white;
+}
+
+.card img {
+    max-width: 100%;
+    height: 250px;
+    width: 300px;
+    /* height: auto;
+    width: auto; */
+    border-radius: 20px;
+}
+
+.card img:hover {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.card h3 {
+    margin: 10px 0;
+}
+
+.card p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.card button {
+    background-color: gold;
+    color: black;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 18px;
+    /* margin-bottom: 10px; */
+    margin: auto;
+}
+
+.card button:hover {
+    background-color: rgb(248, 255, 51);
+    border: 1px solid black;
+}
+
+input[name="amt"] {
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    position: relative;
+    width: 309px;
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding-top: 10px;
+    padding-left: 40px;
+    padding-bottom: 10px;
+}
+input[name="rate"] {
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    position: relative;
+    width: 309px;
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding-top: 10px;
+    padding-left: 40px;
+    padding-bottom: 10px;
+}
+select[name="period"] {
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    position: relative;
+    width: 309px;
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 10px;
+}
+input[name="inputDate"] {
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    position: relative;
+    width: 309px;
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 10px;
+}
+input[name="outputDate"] {
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    position: relative;
+    width: 309px;
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 10px;
+}
+input[name="maturity"] {
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    position: relative;
+    width: 309px;
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding-top: 10px;
+    padding-left: 40px;
+    padding-bottom: 10px;
+}
+input[name="MPeriod"] {
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: right;
+    font-family: "Ubuntu", sans-serif;
+    
+    position: relative;
+    width: 100px;
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 10px;
+}
+
+.icon-textbox {
+    position: relative;
+    width: 100%;
+}
+.icon-textbox i{
+    position: absolute;
+    top: 32%;
+    left: 20px;;
+    z-index: 10;
+}
+.icon-percent {
+    position: relative;
+    width: 100%;
+}
+.icon-percent i{
+    position: absolute;
+    top: 32%;
+    left: 20px;
+    z-index: 10;
+}
+/* #myPopup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid black;
+    padding: 20px;
+    background-color: white;
+    z-index: 1;
+  } */
+  /* Style for the pop-up window */
+/* #myPopup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border: 1px solid #000;
+    padding: 20px;
+  }
+  
+  /* Style for the table */
+  /* #resultTable {
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  #resultTable th,
+  #resultTable td {
+    border: 1px solid #000;
+    padding: 5px;
+  } */ 
+  #myPopup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+  }
+
+  #myPopupContent {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    text-align: center;
+  }
+
+  #closeBtn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  #closeBtn:hover,
+  #closeBtn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+#resultDiv{
+    margin-top: 1%;
+    width: max-content;
+    display: none;
+    background-color: #8f67df;
+    position: fixed;
+    z-index: 12;
+    justify-content:center;
+    top: 220px;
+    left:480px
+}
+
+.pos
+{
+    position: fixed;
+    top:100px;
+}
+#resultTable td{
+    /* margin: 15px; */
+    padding: 5px;
+    width:max-content;
+    text-align: left;
+}
+
+#resultTable th{
+    /* margin: 15px; */
+    padding: 5px;
+    width:max-content;
+    text-align: center;
+
+}
